@@ -6,8 +6,41 @@
   <base href="/"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <link href="favicon.ico" rel="icon" type="image/x-icon"/>
+
+  <style>
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+    }
+
+    main {
+      overflow-y: auto;
+    }
+
+    footer {
+      text-align: end;
+    }
+  </style>
 </head>
 <body>
-<angular-index-html-root></angular-index-html-root>
+
+<header>
+  <h1>Angular Index HTML Test</h1>
+  <angular-index-html-header-content></angular-index-html-header-content>
+</header>
+
+<main>
+  <angular-index-html-root></angular-index-html-root>
+</main>
+
+<footer>
+  <small>Footer content Copyright 2022</small>
+</footer>
+
 </body>
 </html>

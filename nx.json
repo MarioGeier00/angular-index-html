@@ -43,7 +43,8 @@
       "unitTestRunner": "none"
     },
     "@nrwl/angular:component": {
-      "style": "css"
+      "style": "css",
+      "skipTests": true
     }
   },
   "defaultProject": "one-root-component"

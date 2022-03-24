@@ -4,6 +4,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
 import {RouterModule} from '@angular/router';
 import {SharedUiModule} from "@angular-index-html/shared-ui";
+import {HeaderContentComponent} from "../../../../libs/shared-ui/src/lib/header-content/header-content.component";
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,7 +14,7 @@ import {SharedUiModule} from "@angular-index-html/shared-ui";
     SharedUiModule,
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent, HeaderContentComponent],
 })
 export class AppModule {
 }
