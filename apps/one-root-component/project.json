@@ -1,0 +1,89 @@
+{
+  "projectType": "application",
+  "root": "apps/one-root-component",
+  "sourceRoot": "apps/one-root-component/src",
+  "prefix": "angular-index-html",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/apps/one-root-component",
+        "index": "apps/one-root-component/src/index.html",
+        "main": "apps/one-root-component/src/main.ts",
+        "polyfills": "apps/one-root-component/src/polyfills.ts",
+        "tsConfig": "apps/one-root-component/tsconfig.app.json",
+        "assets": [
+          "apps/one-root-component/src/favicon.ico",
+          "apps/one-root-component/src/assets"
+        ],
+        "styles": [
+          "apps/one-root-component/src/styles.css"
+        ],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/one-root-component/src/environments/environment.ts",
+              "with": "apps/one-root-component/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "one-root-component:build:production"
+        },
+        "development": {
+          "browserTarget": "one-root-component:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "one-root-component:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/one-root-component/src/**/*.ts",
+          "apps/one-root-component/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

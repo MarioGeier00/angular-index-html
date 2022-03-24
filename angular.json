@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "projects": {
+    "filled-index-html": "apps/filled-index-html",
+    "one-root-component": "apps/one-root-component",
+    "shared-ui": "libs/shared-ui"
+  }
+}
